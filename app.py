@@ -5,7 +5,7 @@ from PIL import Image
 import os
 
 # Set Streamlit page config
-st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="My Portfolio", page_icon="🌟", layout="wide")
 
 # Function to load Lottie animation
 def load_lottieurl(url):
@@ -20,14 +20,15 @@ def local_css(file_name):
     with open(file_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# Apply custom CSS for background
+# Apply custom CSS for modern background
 def set_background():
     st.markdown(
         """
         <style>
         .stApp {
-            background: url("https://source.unsplash.com/random/1920x1080/?technology") no-repeat center fixed;
-            background-size: cover;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            font-family: 'Arial', sans-serif;
         }
         </style>
         """,
@@ -36,112 +37,85 @@ def set_background():
 
 set_background()
 
-# Load CSS file (ensure "style/style.css" exists)
+# Load CSS file
 local_css("style/style.css")
 
 # ---- LOAD ASSETS ----
 lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
-img_xontact_form = Image.open("images/Bankruptcy.jpg")
-img_lottie_animation = Image.open("images/Opiod stock photo.jpg")
-img_animation_from = Image.open("images/Netflix.jpg")
+img_project_1 = Image.open("images/Bankruptcy.jpg")
+img_project_2 = Image.open("images/Opiod_stock.jpg")
+img_project_3 = Image.open("images/Netflix.jpg")
 
 # ---- HEADER SECTION ----
 with st.container():
-    st.subheader("Hi, I am Agath Clafio :wave:")
-    st.title("A Data Scientist")
+    st.markdown("<div class='glassmorphism'><h1>👋 Hi, I'm Agath Clafio</h1></div>", unsafe_allow_html=True)
+    st.subheader("A Passionate Data Scientist")
     st.write(
-        "Motivated and results-driven Computer Science graduate. Proficient in Machine Learning models, data analysis, and SQL. Passionate about extracting insights and predicting trends."
+        "I analyze data, build ML models, and create AI-powered solutions. Let's turn data into insights!"
     )
-    st.write("[Learn More >](https://www.linkedin.com/in/agathclafio/)")
+    st.markdown("<a class='button' href='https://www.linkedin.com/in/agathclafio/' target='_blank'>🔗 LinkedIn</a>", unsafe_allow_html=True)
 
 # ---- WHAT I DO ----
 with st.container():
     st.write("---")
     left_column, right_column = st.columns(2)
     with left_column:
-        st.header("What I do")
-        st.write("##")
+        st.markdown("<div class='glassmorphism'><h2>🚀 What I Do</h2></div>", unsafe_allow_html=True)
         st.write(
             """
-            As a data scientist with six months of experience: 
-            - Cleaning and preprocessing data
-            - Conducting Exploratory Data Analysis (EDA)
-            - Building and evaluating machine learning models
-            - Communicating insights through data visualization
+            - 📊 Data Cleaning & Preprocessing  
+            - 📈 Exploratory Data Analysis  
+            - 🤖 Machine Learning Model Building  
+            - 📡 Deploying AI Models as Web Apps  
             """
         )
-        st.write("[GitHub >](https://github.com/AgathClafio05)")
+        st.markdown("<a class='button' href='https://github.com/AgathClafio05' target='_blank'>📂 GitHub</a>", unsafe_allow_html=True)
     with right_column:
         st_lottie(lottie_coding, height=300, key="coding")
 
 # ---- PROJECTS ----
-with st.container():
-    st.write("---")
-    st.header("My Projects")
-    st.write("##")
-    
-    # Project 1
-    image_column, text_column = st.columns((1, 2))
-    with image_column:
-        st.image(img_lottie_animation)
-    with text_column:
-        st.subheader("Drug Satisfaction Predictor")
-        st.write(
-            """
-            Developed a predictor achieving 85% accuracy in forecasting drug satisfaction rates. 
-            Built and deployed as a web app to aid in medical treatment decision-making.
-            """
-        )
-        st.markdown("[Explore Project](https://github.com/AgathClafio05/project-01)")
-    
-    # Project 2
-    with st.container():
-        image_column, text_column = st.columns((1, 2))
-        with image_column:
-            st.image(img_xontact_form)
-        with text_column:
-            st.subheader("Bankruptcy Prediction")
-            st.write(
-                """
-                Built an ML model (96.9% accuracy) predicting business bankruptcy.
-                Integrated into a web interface for easy business risk assessment.
-                """
-            )
-            st.markdown("[Explore Project](https://github.com/AgathClafio05/project-02)")
-    
-    # Project 3
-    with st.container():
-        image_column, text_column = st.columns((1, 2))
-        with image_column:
-            st.image(img_animation_from)
-        with text_column:
-            st.subheader("Netflix Recommendation")
-            st.write(
-                """
-                Conducted data analysis on Netflix dataset. Implemented clustering and 
-                built a recommendation system using cosine similarity.
-                """
-            )
-            st.markdown("[Explore Project](https://github.com/AgathClafio05/project-03)")
+st.write("---")
+st.markdown("<div class='glassmorphism'><h2>🌟 My Projects</h2></div>", unsafe_allow_html=True)
+
+# Project 1
+image_column, text_column = st.columns((1, 2))
+with image_column:
+    st.image(img_project_1, width=250)
+with text_column:
+    st.markdown("<h3>💰 Bankruptcy Prediction</h3>", unsafe_allow_html=True)
+    st.write("An AI model with 96.9% accuracy predicting business bankruptcy.")
+    st.markdown("<a class='button' href='https://github.com/AgathClafio05/project-01' target='_blank'>🔍 View Project</a>", unsafe_allow_html=True)
+
+# Project 2
+image_column, text_column = st.columns((1, 2))
+with image_column:
+    st.image(img_project_2, width=250)
+with text_column:
+    st.markdown("<h3>💊 Drug Satisfaction Predictor</h3>", unsafe_allow_html=True)
+    st.write("Built an AI predictor with 85% accuracy for drug satisfaction rates.")
+    st.markdown("<a class='button' href='https://github.com/AgathClafio05/project-02' target='_blank'>🔍 View Project</a>", unsafe_allow_html=True)
+
+# Project 3
+image_column, text_column = st.columns((1, 2))
+with image_column:
+    st.image(img_project_3, width=250)
+with text_column:
+    st.markdown("<h3>🎬 Netflix Recommendation</h3>", unsafe_allow_html=True)
+    st.write("A recommendation system using clustering & cosine similarity.")
+    st.markdown("<a class='button' href='https://github.com/AgathClafio05/project-03' target='_blank'>🔍 View Project</a>", unsafe_allow_html=True)
 
 # ---- CONTACT ----
-with st.container():
-    st.write("---")
-    st.header("Get In Touch With Me!")
-    st.write("##")
+st.write("---")
+st.markdown("<div class='glassmorphism'><h2>📬 Get In Touch</h2></div>", unsafe_allow_html=True)
 
-    contact_form = """
-   <form action="https://formsubmit.co/agathclafio55@gmail.com" method="POST">
+contact_form = """
+<form action="https://formsubmit.co/agathclafio55@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="name" placeholder="Your name" required>
-    <input type="email" name="email" placeholder="Your email" required>
-    <textarea name="message" placeholder="Your message here" required></textarea>
-    <button type="submit">Send</button>
-   </form>
-    """
-    
-    left_column, right_column = st.columns(2)
-    with left_column:
-        st.markdown(contact_form, unsafe_allow_html=True)
-    with right_column:
-        st.empty()
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message Here" required></textarea>
+    <button type="submit">Send Message</button>
+</form>
+"""
+
+st.markdown(contact_form, unsafe_allow_html=True)
