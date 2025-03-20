@@ -133,11 +133,22 @@ with st.container():
     contact_form = """
    <form action="https://formsubmit.co/agathclafio55@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="name" placeholder="Your name" required>
-    <input type="email" name="email" placeholder="Your email" required>
-    <textarea name="message" placeholder="Your message here" required></textarea>
-    <button type="submit">Send</button>
-   </form>
+
+    <input type="text" name="name" placeholder="Your name" required 
+        style="background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid #FFD700; padding: 10px; border-radius: 8px; width: 90%;">
+    
+    <input type="email" name="email" placeholder="Your email" required 
+        style="background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid #FFD700; padding: 10px; border-radius: 8px; width: 90%;">
+    
+    <textarea name="message" placeholder="Your message here" required 
+        style="background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid #FFD700; padding: 10px; border-radius: 8px; width: 90%; height: 100px;"></textarea>
+    
+    <button type="submit" 
+        style="background: #FFD700; color: black; font-size: 18px; padding: 12px 20px; border-radius: 8px; cursor: pointer; transition: 0.3s ease-in-out; border: none;">
+        Send
+    </button>
+</form>
+
     """
     
     left_column, right_column = st.columns(2)
