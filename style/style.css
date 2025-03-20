@@ -1,31 +1,48 @@
-/* Background color for better readability */
-.stApp {
-    background: rgba(0, 0, 0, 0.6);
+/* Glassmorphism Card */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-/* Style text */
-h1, h2, h3, p {
+/* Stylish Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
     color: white;
-    text-shadow: 1px 1px 2px black;
+    background: #ff6600;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* Center the form */
+.button:hover {
+    background: #cc5500;
+}
+
+/* Form Styling */
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
 }
 
-/* Input fields */
 input, textarea {
     width: 80%;
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: none;
 }
 
-/* Submit button */
 button {
     background-color: #ff6600;
     color: white;
