@@ -1,8 +1,10 @@
 /* Apply a gradient blue background */
 .stApp {
-    background: linear-gradient(to right, #ff6347); /* Dark Blue to Vibrant Blue */
+    background: linear-gradient(to right, #000428, #004e92); /* Dark Blue to Vibrant Blue */
     color: white;
     font-family: 'Arial', sans-serif;
+    min-height: 100vh; /* Ensures the background covers the full page */
+    padding: 20px;
 }
 
 /* Headers and text styling */
