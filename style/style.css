@@ -1,6 +1,6 @@
 /* Apply a gradient blue background */
 .stApp {
-    background: linear-gradient(to right, #1E3A8A, #9ACD32); /* Dark Blue to Vibrant Blue */
+    background: linear-gradient(to right, #9ACD32); /* Dark Blue to Vibrant Blue */
     color: white;
     font-family: 'Arial', sans-serif;
 }
